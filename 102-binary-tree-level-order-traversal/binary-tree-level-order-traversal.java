@@ -10,6 +10,7 @@ class Solution {
         if(root == null) return;
         if(lev == 1){
             arr.add(root.val);
+            return;
         }
         nthLev(arr,lev-1,root.left);
         nthLev(arr,lev-1,root.right);
