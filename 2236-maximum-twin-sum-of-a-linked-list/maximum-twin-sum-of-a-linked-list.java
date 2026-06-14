@@ -1,21 +1,40 @@
-
 class Solution {
+
+    public ListNode reverse(ListNode head){
+        ListNode prev = null;
+        ListNode curr = head;
+
+        while(curr != null){
+            ListNode next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+
+        return prev;
+    }
+
     public int pairSum(ListNode head) {
-        ArrayList<Integer>arr = new ArrayList<>();
-        ListNode temp = head;
-        while(temp != null){
-            arr.add(temp.val);
-            temp = temp.next;
+
+        ListNode slow = head;
+        ListNode fast = head;
+
+        while(fast != null && fast.next != null){
+            slow = slow.next;
+            fast = fast.next.next;
         }
-        int i = 0;
-        int j = arr.size()-1;
-        int max = Integer.MIN_VALUE;
-        while(i < j){
-            int sum =  arr.get(i) + arr.get(j); 
-            max = Math.max(sum,max);
-            i++;
-            j--;
+
+        ListNode second = reverse(slow);
+
+        int ans = 0;
+        ListNode first = head;
+
+        while(second != null){
+            ans = Math.max(ans, first.val + second.val);
+            first = first.next;
+            second = second.next;
         }
-        return max;
+
+        return ans;
     }
 }
