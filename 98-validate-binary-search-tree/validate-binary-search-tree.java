@@ -1,25 +1,21 @@
 
 class Solution {
-    public static void inorder(ArrayList<Integer>arr,TreeNode root){
+    static boolean flag = true;
+    static TreeNode pre = null;
+    public static void inorder(TreeNode root){
         if(root == null) return;
-        inorder(arr,root.left);
-        arr.add(root.val);
-        inorder(arr,root.right);
-    }
-    public static boolean isSorted(ArrayList<Integer>arr){
-        int i = 1;
-        int n = arr.size();
-        while(i < n){
-            if(arr.get(i)<=arr.get(i-1)){
-                return false;
-            }
-            i++;
+        inorder(root.left);
+        if(pre == null) pre = root;
+        else if(pre.val >= root.val) flag = false;
+        else{
+            pre = root;
         }
-        return true;
+        inorder(root.right);
     }
     public boolean isValidBST(TreeNode root) {
-        ArrayList<Integer>arr = new ArrayList<>();
-        inorder(arr,root);
-        return isSorted(arr);
+        flag = true;
+        pre = null;
+        inorder(root);
+        return flag;
     }
 }
