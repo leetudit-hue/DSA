@@ -1,21 +1,21 @@
 
 class Solution {
-    public static void inorder(ArrayList<Integer>arr,TreeNode root){
+    static TreeNode prev = null;
+    static int min = Integer.MAX_VALUE;
+    public static void helper(TreeNode root){
         if(root == null) return;
-        inorder(arr,root.left);
-        arr.add(root.val);
-        inorder(arr,root.right);
+        helper(root.left);
+        if(prev == null) prev = root;
+        else{
+            min = Math.min(min,root.val-prev.val);
+            prev = root;
+        }
+        helper(root.right);
     }
     public int minDiffInBST(TreeNode root) {
-        ArrayList<Integer>arr = new ArrayList<>();
-        inorder(arr,root);
-        int i = 1;
-        int n = arr.size();
-        int min = Integer.MAX_VALUE;
-        while(i < n){
-            min = Math.min(min,arr.get(i) - arr.get(i-1));
-            i++;
-        }
+        prev = null;
+        min = Integer.MAX_VALUE;
+        helper(root);
         return min;
     }
 }
