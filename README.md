@@ -5,6 +5,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [0287-find-the-duplicate-number](https://github.com/leetudit-hue/DSA/tree/master/0287-find-the-duplicate-number) |
+| [3020-find-the-maximum-number-of-elements-in-subset](https://github.com/leetudit-hue/DSA/tree/master/3020-find-the-maximum-number-of-elements-in-subset) |
 ## Two Pointers
 |  |
 | ------- |
@@ -17,4 +18,12 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [0287-find-the-duplicate-number](https://github.com/leetudit-hue/DSA/tree/master/0287-find-the-duplicate-number) |
+## Hash Table
+|  |
+| ------- |
+| [3020-find-the-maximum-number-of-elements-in-subset](https://github.com/leetudit-hue/DSA/tree/master/3020-find-the-maximum-number-of-elements-in-subset) |
+## Enumeration
+|  |
+| ------- |
+| [3020-find-the-maximum-number-of-elements-in-subset](https://github.com/leetudit-hue/DSA/tree/master/3020-find-the-maximum-number-of-elements-in-subset) |
 <!---LeetCode Topics End-->
