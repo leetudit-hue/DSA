@@ -1,7 +1,7 @@
 class Solution {
     public List<Integer> sequentialDigits(int low, int high) {
         Queue<Integer>q = new LinkedList<>();
-        for(int i = 1 ; i < 10 ; i++){
+        for(int i = 1 ; i < 9 ; i++){
             q.add(i);
         }
         ArrayList<Integer>ans = new ArrayList<>();
